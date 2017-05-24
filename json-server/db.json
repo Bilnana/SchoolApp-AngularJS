@@ -1,0 +1,52 @@
+{
+  "professors": [
+    {
+      "id": 0,
+      "name": "Jovan Jovanović",
+      "subject": "Matematika"
+    },
+    {
+      "id": 1,
+      "name": "Marko Markovic",
+      "subject": "fizika"
+    },
+    {
+      "name": "Milica Mitic",
+      "subject": "Biologija",
+      "id": 2
+    },
+    {
+      "name": "dsd",
+      "subject": "dsd",
+      "id": 3
+    },
+    {
+      "name": "hhh",
+      "subject": "hhh",
+      "id": 4
+    }
+  ],
+  "students": [
+    {
+      "id": 0,
+      "name": "Biljana Ljubojevic",
+      "born": 123654789,
+      "number": 123,
+      "option": "nema"
+    },
+    {
+      "id": 1,
+      "name": "",
+      "born": "",
+      "number": "",
+      "option": "nema"
+    },
+    {
+      "id": 2,
+      "name": "Biljana Ljubojevic",
+      "born": "5678903454",
+      "number": "56/2017",
+      "option": "nema"
+    }
+  ]
+}

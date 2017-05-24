@@ -1,0 +1,22 @@
+{
+  "name": "school",
+  "authors": [
+    "Biljana Ljubojevic"
+  ],
+  "description": "Administration",
+  "main": "index.html",
+  "license": "MIT",
+  "homepage": "",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular": "^1.6.4",
+    "bootstrap": "^3.3.7"
+  },
+  "private": true
+}

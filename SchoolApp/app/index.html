@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="schoolApp",[]>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- build:css styles/main.css -->
+    <link href="../bower_components/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="styles/css/bootstrap-social.css" rel="stylesheet">
+    <link href="styles/css/main.css" rel="stylesheet">
+    <!-- endbuild -->
+    
+    <title>School administration</title>    
+
+</head>
+
+<body>
+    
+  <div class="container" ng-controller="DataController">
+    <div class="row">
+        <div class="professors col-sm-5">
+        <!-- Table with professors --> 
+          <table class="table table-hover">
+              <thead>
+                <tr>
+                  <th><h4>Profesori</h4></th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr ng-repeat="professor in professors">
+                  <td>{{professor.name}}<br/>{{professor.subject}}</td>
+                </tr>
+              </tbody>
+            </table>
+            <!-- Table with professors -->
+            <div class="col-sm-8">
+                <!-- Frorm with emty fields -->
+                <form  class="form-horizontal" name="professorForm" ng-submit="saveProfessor()" novalidate >
+                    <div class="form-group">
+                        <input type="text" ng-model="professor.name" class="form-control"  placeholder="Ime i prezime"><br/>
+                        <input type="text" ng-model="professor.subject" class="form-control" placeholder="Predmet">
+                    </div>
+                   <div class="form-group col-sm-offset-3">
+                        <input type="submit" class="btn btn-primary" value="Dodaj">
+                   </div>   
+                </form>
+                <!--Frorm with emty fields -->
+            </div>    
+        </div>
+        
+        <div class="col-sm-1"></div>
+        
+        <div class="students col-sm-5">
+        <!-- Table with students -->    
+          <table class="table table-hover">
+              <thead>
+                <tr>
+                  <th><h4>Studenti</h4></th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr ng-repeat="student in students">
+                  <td>{{student.name}}<br/>JMBG:{{student.born}}<br/>Br.indexa:{{student.number}}<br/>Izabrani profesor:{{student.option}}<br/>  
+                    <!-- Select professor -->  
+                    <select class="options"  ng-model="newOption"  ng-click="updateStudent(student,newOption,id)">
+                        <option  ng-repeat="professor in professors" value="{{professor.name}}" ng->{{professor.name}}</option>
+                    </select>
+                     <!-- Select professor --> 
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+             <!-- Table with students -->
+            <div class="col-sm-8">
+                 <!-- Form with empty fields -->
+                <form  class="form-horizontal" name="studentForm" ng-submit="saveStudent()" novalidate >
+                    <div class="form-group">
+                        <input type="text" ng-model="student.name" class="form-control"  placeholder="Ime i prezime"><br/>
+                        <input type="text" ng-model="student.born" class="form-control" placeholder="JMBG"><br/>
+                        <input type="text" ng-model="student.number" class="form-control" placeholder="Br.indexa">
+                    </div>
+                    <div class="form-group col-sm-offset-3">
+                        <input type="submit" class="btn btn-primary" value="Dodaj">
+                    </div>    
+               </form>  
+                <!-- Form with empty fields -->
+            </div>    
+        </div>
+    </div>
+  </div>
+
+</body>
+<!-- build:js scripts/main.js -->
+<script src="../bower_components/angular/angular.min.js"></script>
+<script src="/scripts/app.js"></script>
+
+<!-- endbuild -->
+    
+</html>
